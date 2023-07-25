@@ -1,0 +1,378 @@
+@font-face {
+    font-family: 'AppleSDGothicNeoL';
+    src: url('font/AppleSDGothicNeoL.ttf') format('Truetype')
+   ;
+}
+
+@font-face {
+    font-family: 'AppleSDGothicNeoR';
+    src: url('font/AppleSDGothicNeoR.ttf') format('Truetype')
+   ;
+}
+
+@font-face {
+    font-family: 'AppleSDGothicNeoM';
+    src: url('font/AppleSDGothicNeoM.ttf') format('Truetype')
+   ;
+}
+
+html {
+    scroll-behavior: smooth; /* 스크롤 시 부드럽게 이동 */
+}
+
+body {
+    margin: 0; padding: 0;
+    font-family: 'AppleSDGothicNeoL';
+}
+
+#logo{
+    position: fixed;
+    text-align: center;  
+    z-index: 50000;
+    scale: 50%;
+    top: -9px;
+    left: 100px;
+}
+
+#header{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+#header-menu{
+    position: fixed;
+    text-align: center;
+    z-index: 10000;
+    width: 100%;
+    top: 13px;
+    font-family: 'AppleSDGothicNeoM';
+
+}
+
+.menubar{
+padding-left: 50px;
+padding-right: 50px;
+}
+
+/*------------------------------------ index.html Style -----------------------------------*/
+
+.main{
+    width: 100%;
+    top: 50px;
+    height: 800px;
+    z-index: 1000;
+    overflow: hidden;
+}
+.main-img{
+    position: relative;
+    width: 100%;
+}
+
+#main-container{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: -500px;
+    font-size: 50px;
+    color: #fff;
+    font-family: 'AppleSDGothicNeoM';
+    z-index: 1000;
+}
+
+#main-contents{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: -550px;
+    font-size: 30px;
+    scale: 100%;
+    color:#fff;
+    z-index: 1000;
+}
+
+#link{
+    position: relative;
+    text-align: center;
+    top: -500px;
+    font-size: 20px;
+    scale: 100%;
+    color: #fff;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.button-elevated {
+    font-size: 20px;
+    line-height: 1.1764805882;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    border-style: solid;
+    border-width: 1px;
+    min-width: 28px;
+    padding: 11px 21px;
+    --sk-button-margin-horizontal: 18px;
+    --sk-button-margin-vertical: 18px;
+    transition: 0.s;
+}
+
+.button a{
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+    min-width: 35px;
+    padding: 10px 25px;
+    border-radius: 980px;
+    background: #000000;
+    color: #fff;
+    border: 1px solid transparent;
+    --sk-button-margin-horizontal: 14px;
+    --sk-button-margin-vertical: 14px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.box{
+    top: -230px;
+    position: relative;
+    display: flex;
+    flex-basis: 500px;
+    flex-direction: row;
+    vertical-align: bottom;
+    justify-content: space-evenly;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.wrapper1{
+    width: 50%;
+    padding-bottom: 200px;
+    height: 300px;
+    background-color: rgb(15, 218, 93);
+    border-radius: 24px;
+    text-decoration: none;
+}
+#text1{
+    position: relative;
+    top: -30px;
+    color: rgb(255, 255, 255);
+    font-size: 80px;
+    font-family: 'AppleSDGothicNeoM';
+    text-decoration: none;
+    left: 50px;
+    overflow: cover;
+    width: 30%;
+}
+
+.wrapper2{
+    padding-bottom: 200px;
+    height: 300px;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 24px;
+    text-decoration: none;
+}
+
+#text2{
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 80px;
+    font-family: 'AppleSDGothicNeoM';
+    text-decoration: none;
+    left: 50px;
+    overflow: cover;
+    width: 50%;
+}
+
+#wrapper-img{
+    position: relative;
+    width: 45%;
+    right: 10px;
+    top: -520px;
+    float: right;
+    object-fit: cover;
+}
+
+.register{
+    position: relative;
+    display: flex;
+    float: right;
+    right: 5%;
+    padding-bottom: 200px;
+    height: 300px;
+    width: 35%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 24px;
+    text-decoration: none;
+    top: -730px;
+}
+
+#register-text{
+    top: 50px;
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 80px;
+    font-family: 'AppleSDGothicNeoM';
+    text-decoration: none;
+    left: 50px;
+    overflow: cover;
+    width: 50%;
+}
+
+/*------------------------------------ Swiper UI -----------------------------------*/
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+#swiper-title{
+    position: relative;
+    text-align: center;
+    top: -100px;
+    font-size: 60px;
+    color: #000000;
+    font-family: 'AppleSDGothicNeoM'
+}
+
+swiper-container {
+  top: -100px;
+  width: 100%;
+  height: 80%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ :root {
+    --swiper-theme-color: #ffffff;
+}
+
+#footer{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(231, 231, 231);
+    text-align: center;
+    padding-top: 50px;
+    color: #929292;
+}
+
+/*------------------------------------ Store.html Style -----------------------------------*/
+
+#store-contents{
+    position: relative;
+    text-align: center;
+    top: 100px;
+    font-size: 60px;
+    color: #000000;
+    font-family: 'AppleSDGothicNeoM'
+}
+
+.contents{
+    position: relative;
+    top: 00px;
+    display: flex;
+    flex-basis:300px;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+    scale: 80%;
+}
+
+.background{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #dbdbdb;
+    border-radius: 60px 60px 60px 60px / 60px 60px 60px 60px;
+    border: 1px gray;
+    scale: 80%;
+}
+
+.contents img{
+    vertical-align: bottom;
+    scale: 80%;
+}
+
+/* 하이퍼링크 */
+
+#header-menu a{
+    text-decoration: none;
+    color: #000000;
+    transition: 1s;
+    
+}
+
+#header-menu a:hover{
+    text-decoration: none;
+    color: red;
+    transition: 1s;
+    
+}
+
+.button a:hover{
+    transition: 0.5s;
+    background: #fff;
+    color: #ffffff;
+}
+
+#link a:hover{
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+#content_01 a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+#content_01 a:hover{
+    display: inline-block;
+    text-decoration: none;
+}
+
+#music a{
+    color: #000000;
+    text-decoration: none;
+}
+
+
+@media (max-width: 1024px) {
+    .contents{
+        scale: 50%;
+    }
+}
