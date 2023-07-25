@@ -1,108 +1,308 @@
 @font-face {
-    font-family: 'AppleSDGothicNeoL';
+    font-family: 'L';
     src: url('font/AppleSDGothicNeoL.ttf') format('Truetype')
    ;
 }
 
 @font-face {
-    font-family: 'AppleSDGothicNeoR';
+    font-family: 'R';
     src: url('font/AppleSDGothicNeoR.ttf') format('Truetype')
    ;
 }
 
 @font-face {
-    font-family: 'AppleSDGothicNeoM';
+    font-family: 'M';
     src: url('font/AppleSDGothicNeoM.ttf') format('Truetype')
+   ;
+   
+}
+
+@font-face {
+    font-family: 'SB';
+    src: url('font/AppleSDGothicNeoSB.ttf') format('Truetype')
+   ;
+}
+
+@font-face {
+    font-family: 'B';
+    src: url('font/AppleSDGothicNeoB.ttf') format('Truetype')
    ;
 }
 
 html {
     scroll-behavior: smooth; /* 스크롤 시 부드럽게 이동 */
+    font-family: 'R';
 }
 
 body {
     margin: 0; padding: 0;
-    font-family: 'AppleSDGothicNeoL';
+    max-width: 100%;
+    font-family: 'R';
+    background-color: #F2F2F2;
 }
+
+body.active{
+    height: 100%;
+    overflow: hidden;
+}
+
+/* ---------------------------------해더영역--------------------------------- */
 
 #logo{
     position: fixed;
-    text-align: center;  
-    z-index: 50000;
-    scale: 50%;
-    top: -9px;
-    left: 100px;
-}
-
-#header{
-    position: fixed;
-    width: 100%;
+    width: 128px;
     height: 50px;
-    top: 0;
-    background-color: #fff;
-    z-index: 9999;
+    z-index: 101;
+    top: 15px;
+    left: 12%;
 }
 
-#header-menu{
+.header{
     position: fixed;
+    width: 100%;    
+    height: 80px;
+    color: white;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    z-index: 100;
+}
+
+.headerbg{
+    position: fixed;
+    width: 100%;    
+    height: 80px;
+    background-color: white;
+    opacity: 0.7;
+    z-index: 99;
+    transition: 1s;
+}
+
+.headerbg.active{
+    opacity: 1;
+}
+
+.header-absolute{
+    position: absolute;
+    width: 100%;    
+    height: 80px;
+    background-color: white;
+    z-index: 99;
+}
+
+.header-menu{
+    display: flex;
+    position: fixed;
+    width: 30%;
+    left: 30%;
+    top: 30px;
     text-align: center;
-    z-index: 10000;
+    justify-content: space-between;
+    z-index: 101;
+    font-family: 'M';
+    z-index: 10009;
+}
+
+.header-icon{
+    position: fixed;
+    display: flex;
+    float: right;
+    right: 12%;
+    top: 15px;
+    scale: 60%;
+    color: #FF3B28;
+    z-index: 101;
+}
+
+.search{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.search span{
+    z-index: 30010;
+}
+
+.account{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* ---------------------------------검색--------------------------------- */
+
+.button {
+	position: absolute;
+	width: 45px;
+	height: 34px;
+	display: block;
+	top: 0rem;
+	right: 2rem;
+	z-index: 100;
+}
+
+.overlay{
+  position: fixed;
+  top: -100%;
+  right: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+  transition: 1s;
+  z-index: 80;
+  height: 100%;
+}
+
+.overlay.visible{
+    top: 0;
+    height: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0; transform: translateX(-25%);}
+    100% { opacity: 1; transform: translateX(0);}
+  }
+
+.background {
+    position: fixed;
     width: 100%;
-    top: 13px;
-    font-family: 'AppleSDGothicNeoM';
-
+    height: 100%;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.711);
+    z-index: 29;
+    transition: 1s;
 }
 
-.menubar{
-padding-left: 50px;
-padding-right: 50px;
+.background.visible{
+    top: 0;
+    height: 100%;
+    opacity: 0.7;
+    visibility: visible;
 }
 
-/*------------------------------------ index.html Style -----------------------------------*/
-
-.main{
-    width: 100%;
-    top: 50px;
-    height: 800px;
-    z-index: 1000;
-    overflow: hidden;
+.background.close{
+    top: 0;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
 }
-.main-img{
-    position: relative;
-    width: 100%;
-}
-
-#main-container{
-    position: relative;
-    text-align: center;
-    width: 100%;
-    top: -500px;
-    font-size: 50px;
-    color: #fff;
-    font-family: 'AppleSDGothicNeoM';
-    z-index: 1000;
+  
+section {
+	margin-top: 80px;
+	position: fixed;
+	width: 100%;
+	padding: 2.5rem 8.6rem; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgb(255, 255, 255);
+	padding-bottom: 300px;
+    z-index: 80;
 }
 
-#main-contents{
-    position: relative;
-    text-align: center;
-    width: 100%;
-    top: -550px;
-    font-size: 30px;
-    scale: 100%;
-    color:#fff;
-    z-index: 1000;
+section.visible{
+	opacity: 1;
+	visibility: visible;
 }
+  
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	word-break: break-all;
+}
+  
+input {
+	top: 0px;
+	width: 100%;
+	height: 3rem;
+	border-radius: 30px;
+	padding: 0 1rem;
+	border: 1px solid #c9c9c9;
+	background: #fff;
+	margin: 1rem 0;
+}
+
+input#search a{
+    transition: 0.5s;
+    background-color: #ffffff;
+}
+  
+
+input#search:hover{
+    transition: 0.5s;
+    background-color: #ececec;
+}
+  
+input::placeholder {
+	font-size: 1rem;
+	color:#9A9A9A;
+}
+
+mark {
+	background: #b2b2b200;
+}
+
+.autocomplete > div.active {
+	background: #ffffff;
+	color: #000;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+/* ---------------------------------헤더 하이퍼링크--------------------------------- */
+
+a{
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+
+a:hover{
+    color: #FF3B28;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.search a{
+    color: black;
+    transition: 0.5s;
+}
+
+.search:hover{
+    filter: invert(16%) sepia(100%) saturate(3054%) hue-rotate(358deg) brightness(250%) contrast(103%);
+    transition: 0.5s;
+}
+
+
+.account a{
+    color: black;
+    transition: 0.5s;
+}
+
+.account:hover{
+    filter: invert(16%) sepia(100%) saturate(3054%) hue-rotate(358deg) brightness(250%) contrast(103%);
+    transition: 0.5s;
+}
+
+/* ---------------------------------Button--------------------------------- */
 
 #link{
     position: relative;
     text-align: center;
-    top: -500px;
+    top: 90px;
     font-size: 20px;
     scale: 100%;
     color: #fff;
     z-index: 1000;
     transition: 0.5s;
+    margin-left: 300px;
 }
 
 .button-elevated {
@@ -119,6 +319,7 @@ padding-right: 50px;
     transition: 0.s;
 }
 
+
 .button a{
     cursor: pointer;
     display: inline-block;
@@ -130,8 +331,8 @@ padding-right: 50px;
     min-width: 35px;
     padding: 10px 25px;
     border-radius: 980px;
-    background: #000000;
-    color: #fff;
+    background: #ffffff;
+    color: #000000;
     border: 1px solid transparent;
     --sk-button-margin-horizontal: 14px;
     --sk-button-margin-vertical: 14px;
@@ -139,240 +340,626 @@ padding-right: 50px;
     transition: 0.5s;
 }
 
-.box{
-    top: -230px;
-    position: relative;
-    display: flex;
-    flex-basis: 500px;
-    flex-direction: row;
-    vertical-align: bottom;
-    justify-content: space-evenly;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-wrap: wrap;
-}
 
-.wrapper1{
-    width: 50%;
-    padding-bottom: 200px;
-    height: 300px;
-    background-color: rgb(15, 218, 93);
-    border-radius: 24px;
-    text-decoration: none;
-}
-#text1{
-    position: relative;
-    top: -30px;
-    color: rgb(255, 255, 255);
-    font-size: 80px;
-    font-family: 'AppleSDGothicNeoM';
-    text-decoration: none;
-    left: 50px;
-    overflow: cover;
-    width: 30%;
-}
-
-.wrapper2{
-    padding-bottom: 200px;
-    height: 300px;
-    width: 30%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 24px;
-    text-decoration: none;
-}
-
-#text2{
-    position: relative;
-    color: rgb(0, 0, 0);
-    font-size: 80px;
-    font-family: 'AppleSDGothicNeoM';
-    text-decoration: none;
-    left: 50px;
-    overflow: cover;
-    width: 50%;
-}
-
-#wrapper-img{
-    position: relative;
-    width: 45%;
-    right: 10px;
-    top: -520px;
-    float: right;
-    object-fit: cover;
-}
-
-.register{
-    position: relative;
-    display: flex;
-    float: right;
-    right: 5%;
-    padding-bottom: 200px;
-    height: 300px;
-    width: 35%;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 24px;
-    text-decoration: none;
-    top: -730px;
-}
-
-#register-text{
-    top: 50px;
-    position: relative;
-    color: rgb(0, 0, 0);
-    font-size: 80px;
-    font-family: 'AppleSDGothicNeoM';
-    text-decoration: none;
-    left: 50px;
-    overflow: cover;
-    width: 50%;
-}
-
-/*------------------------------------ Swiper UI -----------------------------------*/
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-#swiper-title{
-    position: relative;
-    text-align: center;
-    top: -100px;
-    font-size: 60px;
-    color: #000000;
-    font-family: 'AppleSDGothicNeoM'
-}
+/* ---------------------------------Swiper--------------------------------- */
 
 swiper-container {
-  top: -100px;
-  width: 100%;
-  height: 80%;
+    position: relative;
+    top: 20px;
+    width: 100%;
+    height: 90%;
+    transition-timing-function: linear;
+    overflow: hidden;
 }
 
 swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    height: 90%;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
 }
- :root {
+
+:root {
     --swiper-theme-color: #ffffff;
 }
 
-#footer{
+/* ---------------------------------Contents 타이틀 서브 타이틀 설정--------------------------------- */
+
+.content-text{
+    top: 40px;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'B';
+    color: black;
+}
+
+.content-text2{
+    top: 50px;
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'M';
+    color: #9A9A9A;
+}
+
+.content-text3{
+    top:  10px;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'B';
+    color: black;
+}
+
+.content-text4{
+    top: 20px;
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'M';
+    color: #9A9A9A;
+}
+
+.content-text5{
+    top: 220px;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'B';
+    color: black;
+    z-index: 80;
+}
+
+/* ---------------------------------박스 안 텍스트 Color 따라 사용--------------------------------- */
+
+
+.title{
+    position: relative;
+    font-size: 25px;
+    top: 10px;
+    font-family: 'B';
+    z-index: 30;
+    color: black;
+}
+
+.title-white{
+    position: relative;
+    font-size: 25px;
+    font-family: 'B';
+    top: 10px;
+    z-index: 30;
+    color: white;
+}
+
+/* ---------------------------------박스 설정--------------------------------- */
+
+.container{
+    top: 80px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40%, auto));
+    justify-content: center;
+    text-align: center;
+    gap: 40px 20px;
+    place-items: center;
+    height: auto;
+}
+
+.item1{
+    position: relative;
+    display: grid;
+    width: 700px;
+    height: 582px;
+    background-color: white;
+    border-radius: 50px;
+    align-self: start;
+    box-shadow: 3px 6px 10px 10px rgb(239, 239, 239);
+    justify-content: center;
+}
+
+.item2{
+    float: right;
+    position: relative;
+    display: grid;
+    width: 700px;
+    height: 700px;
+    background-color: white;
+    border-radius: 50px;
+    align-self: start;
+    box-shadow: 3px 6px 10px 10px rgb(239, 239, 239);
+    float: right;
+}
+
+.item3{
+    position: relative;
+    display: grid;
+    width: 700px;
+    height: 519px;
+    background-color: white;
+    border-radius: 50px;
+    align-self: start;
+    top: -110px;
+    box-shadow: 3px 6px 10px 10px rgb(239, 239, 239);
+}
+
+.item4{
+    position: relative;
+    display: grid;
+    width: 700px;
+    height: 406px;
+    background-color: white;
+    border-radius: 50px;
+    align-self: start;
+    box-shadow: 3px 6px 10px 10px rgb(239, 239, 239);
+    float: right;
+}
+
+.learnmore{
+    position:absolute;
+    float: right;
+    right: 0px; 
+    bottom: 0px;
+    color: #FF3B28;
+    font: 15px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+/* ---------------------------------Box1--------------------------------- */
+
+.item1-image{
+    position: relative;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50px 50px 0px 0px;
+    width: 100%;
+    height: 275px;
+    top: -55px;
+    filter: brightness(90%);
+}
+
+.item1-text1{
+    top: -50px;
+    position: relative;
+    float: left;
+    text-align: left;
+    font-size: 30px;
+    font-family: 'SB';
+    margin-left: 30px;
+    margin-right: 30px;
+    color: black;
+}
+
+.item1-text2{
+    top: -50px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'R';
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #909090;
+}
+
+/* ---------------------------------Box2--------------------------------- */
+
+.music-container{
+    top: -40px;
+    position: relative;
+    display: flex;
+    float: left;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 50px;
+}
+
+.music-item{
+    position: relative;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    align-content: flex-start;    
+}
+
+.music-link img{
+    width: 80px;
+    height: 80px;
+    box-shadow: 1px 3px 5px 5px rgb(239, 239, 239);
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.music-title{
+    position: relative;
+    font-size: 25px;
+    font-family: 'M';
+    color: black;
+    float: left;
+    margin-left: 30px;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.music-subtitle{
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    font-family: 'R';
+    color: #9A9A9A;
+    float: left;
+    margin-left: 30px;
+    text-align: left;
+    justify-content: right;
+    padding-left: 100px;
+    top: -40px;
+}
+
+.number{
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    font-family: 'M';
+    font-size: 20px;
+}
+
+/* ---------------------------------Box3--------------------------------- */
+
+.concert-container{
+    top: -20px;
+    position: relative;
+    display: flex;
+}
+
+.concert-item{
+    position: relative;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    align-content: flex-start;    
+}
+
+.item3text01{
+    position: relative;
+    float: left;
+    font-size: 20px;
+    font-family: 'M';
+    color: black;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.item3text02{
+    position: relative;
+    top: 20px;
+    float: left;
+    font-size: 30px;
+    font-family: 'SB';
+    color: black;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.item3text03{
+    position: relative;
+    top: 40px;
+    float: left;
+    font-size: 15px;
+    font-family: 'R';
+    color: #9A9A9A;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.concert-item img{
+    width: 290px;
+    height: 360px;
+    float: right;
+    margin-right: 30px;
+}
+
+/* ---------------------------------Box4--------------------------------- */
+
+.item4text01{
+    top: 30px;
+    position: relative;
+    font-size: 20px;
+    font-family: 'M';
+}
+
+.item4text02{
+    top: -10px;
+    position: relative;
+    font-size: 40px;
+    font-family: 'SB';
+    color: #FF3B28;
+}
+
+.item4text03{
+    top: -40px;
+    position: relative;
+    font-size: 30px;
+    font-family: 'M';
+}
+
+.item4text04{
+    top: -50px;
+    position: relative;
+    font-size: 15px;
+    font-family: 'R';
+    color: #9A9A9A;
+}
+
+/* ---------------------------------Podcast--------------------------------- */
+
+.container-podcast{
+    top: 40px;
+    position: relative;
+    display: flex;
+    margin-left: 240px;
+    margin-right: 240px;
+    text-align: center;
+    justify-content: center;
+}
+
+.item-podcast{
+    width: 300px; 
+    flex-basis: 600px; 
+    flex-grow: 0;
+    flex-shrink: 1;
+    justify-content: center;
+    vertical-align: bottom;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.item-podcast img{
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+/* ---------------------------------icons--------------------------------- */
+
+.container-icons{
+    position: relative;
+    display: flex;
+    width: 100%;
+    top: 150px;
+    justify-content: space-evenly;
+    height: 450px;
+    background-color: white;
+    align-items: center;
+    flex-direction: row;
+    flex-shrink: 1;
+}
+
+.item-icons{
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-shrink:1;
+    flex-basis: 200px;
+    justify-content: center;
+    text-align: center;
+}
+
+.item-icons img{
+    width: 100px;
+    height: 100px;
+    filter: invert(16%) sepia(100%) saturate(3054%) hue-rotate(358deg) brightness(250%) contrast(103%);
+}
+
+.title-icons{
+    position: relative;
+    font-size: 25px;
+    color: #535353;
+    font-family: 'SB';
+    top: 10px;
+}
+
+.subtitle-icons{
+    position: relative;
+    font-size: 15px;
+    color: #909090;
+    font-family: 'R';
+    top: 20px;
+}
+
+/* ---------------------------------support--------------------------------- */
+
+
+.container-support{
+    top: 150px;
     position: relative;
     width: 100%;
-    height: 200px;
-    background-color: rgb(231, 231, 231);
-    text-align: center;
-    padding-top: 50px;
-    color: #929292;
+    height: 400px;
+    background-color: #000;
+    
 }
 
-/*------------------------------------ Store.html Style -----------------------------------*/
-
-#store-contents{
+.item-support{
     position: relative;
-    text-align: center;
-    top: 100px;
-    font-size: 60px;
-    color: #000000;
-    font-family: 'AppleSDGothicNeoM'
 }
 
-.contents{
-    position: relative;
-    top: 00px;
+.title-support{
     display: flex;
-    flex-basis:300px;
-    justify-content: space-around;
+    width: 50%;
+    position: relative;
+    font-size: 40px;
+    font-family: 'SB';
+    color: white;
+    margin-left: 240px;
+    top: 60px;
+}
+
+.subtitle-support{
+    display: flex;
+    width: 50%;
+    position: relative;
+    font-size: 20px;
+    font-family: 'M';
+    display: flex;
+    color: white;
+    margin-left: 240px;
+    top: 60px;
+}
+
+.container-support img{
+    position: relative;
+    width: 270px;
+    height: 270px;
+    float: right;
+    margin-right: 240px;
+    top: -100px;
+}
+
+/* ---------------------------------footer--------------------------------- */
+
+.container-footer{
+    top: 150px;
+    position: relative;
+    color: #F2F2F2;
+    height: 560px;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.footer-logo {
+    display: flex;
+    position: relative;
+    float: left;
+    width: 90%;
+}
+
+.footer-logo img{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    scale: 80%;
+}
+
+.item-footer{
+    flex-basis: 250px;
+    top: 100px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-shrink: 1;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.item-footer2{
+    flex-basis: 250px;
+    top: 100px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-shrink: 1;
     flex-direction: row;
-    flex-wrap: wrap;
-    flex-grow: 0;
-    flex-shrink: 0;
-    scale: 80%;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
 }
 
-.background{
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #dbdbdb;
-    border-radius: 60px 60px 60px 60px / 60px 60px 60px 60px;
-    border: 1px gray;
-    scale: 80%;
+.title-footer{
+    position: relative;
+    font-size: 20px;
+    font-family: 'SB';
+    text-align: left;
+    color: #000;
 }
 
-.contents img{
-    vertical-align: bottom;
-    scale: 80%;
+.subtitle-footer{
+    position: relative;
+    top: 10px;
+    font-size: 20px;
+    font-family: 'R';
+    text-align: left;
+    color: #9A9A9A;
 }
 
-/* 하이퍼링크 */
+.footer-link{
+    display: flex;
+    position: relative;
+    float: right;
+    width: 30px;
+    height: 30px;
+    flex-direction: row;
+}
 
-#header-menu a{
-    text-decoration: none;
-    color: #000000;
-    transition: 1s;
+.footer-link img{
+    width: 30px;
+    height: 30px;
+    flex-direction: row;
+}
+
+.footer-text{
+    font-family: 'R';
+    font-size: 15px;
+    color: #9A9A9A;
+    position: relative;
+    text-align: center;
+    display: block;
+}
+
+@media (max-width: 1600px) {
+    .container{
+        grid-template-columns: repeat(auto-fill, minmax(40%, auto));
+    }
+}
+
+@media (max-width: 1500px) {
+    .container{
+        scale: 80%;
+        top: -80px;
+    }
     
-}
+    .item1{
+        scale:80%;
+    }
 
-#header-menu a:hover{
-    text-decoration: none;
-    color: red;
-    transition: 1s;
-    
-}
+    .item2{
+        scale:80%;
+    }
 
-.button a:hover{
-    transition: 0.5s;
-    background: #fff;
-    color: #ffffff;
-}
+    .item3{
+        scale:80%;
+        top: -150px;
+    }
 
-#link a:hover{
-    display: inline-block;
-    color: rgb(0, 0, 0);
-    transition: 0.5s;
-    text-decoration: none;
+    .item4{
+        scale:80%;
+        top: -40px;
+    }
 }
-
-#content_01 a{
-    display: inline-block;
-    text-decoration: none;
-}
-
-#content_01 a:hover{
-    display: inline-block;
-    text-decoration: none;
-}
-
-#music a{
-    color: #000000;
-    text-decoration: none;
-}
-
 
 @media (max-width: 1024px) {
-    .contents{
-        scale: 50%;
+    .container{
+        grid-template-columns: repeat(auto-fill, minmax(50%, auto));
     }
 }

@@ -1,87 +1,222 @@
 <!DOCTYPE html>  
 <html>
 <head>
-  <meta charset="utf-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <link rel="stylesheet" type="text/css" href="style.css" href="header.js">
-  <title>Home</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script href="swiper.js"></script>
-  <script href="header.js"></script>
+    <meta charset="utf-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Bugs!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 </head>
 
 <body>
-  <a id="logo" href="index.html"> 
-   <img src="image/logo.png">
-  </a>
+    <a href="index.html" id="logo">
+        <img src="image/logo.svg">
+    </a>
 
-  <div id="header">
-  </div>
+    <div class="header"></div>
+    <div class="headerbg"></div>
+    <div class="header-absolute"></div>
 
-
-  <div id="header-menu">
-   <a class="menubar" href="index.html">
-         Home
-   </a>
-   <a class="menubar" href="store.html">
-         Store
-   </a>
-   <a class="menubar" href="support.html">
-         Support
-   </a>
-  </div>
-
-  <div class="main"> 
-      <img src="image/01.jpg" class="main-img">
-  </div>
-
-  <div id="main-container" class="animate__animated animate__fadeInDown">
-  <h1>Meet Beats Solo Pro.</h1>
-  </div>
-
-  <div id="main-contents" class="animate__animated animate__fadeInDown">
-      <div href="content_01">Beats Solo Pro immerse you in rich, award-winning sound, everywhere you want to go.</div>    
-  </div>
-
-  <div class="button" id="link"><a href="learnmore.html">Learn more</a></div>
+    <div class="header-menu">
+        <a href="about.html">회사소개</a>
+        <a href="bugscharts.html">벅스차트</a>
+        <a href="#movepodcast">팟케스트</a>
+        <a href="#movesupport">고객센터</a>
+    </div>
     
-  <div class="box">
+    <div class="header-icon">
+        <a class="search"><img src="image/search.svg"></a>
+        <a class="account" href="account.html"><img src="image/account.svg"></a>
+    </div>
 
-    <a class="wrapper1" href="https://open.spotify.com/">
-      <h1 id="text1">Play music<div>with Spotify.</div></h1>
-      <img id="wrapper-img" src="products/c_01.png">
-    </a>
+    <!-- Search -->
 
-    <a class="wrapper2" href="register.html">
-      <h2 id="text2">Register<div>your Beats.</div></h2>
-    </a>
-
-  </div>
-
-  <h1 id="swiper-title">Explore your Beats.</h1>
-
-  <swiper-container class="mySwiper" navigation="true">
-    <swiper-slide><img src="products/01.jpeg"></swiper-slide>
-    <swiper-slide><img src="products/02.jpeg"></swiper-slide>
-    <swiper-slide><img src="products/03.jpeg"></swiper-slide>
-    <swiper-slide><img src="products/04.jpeg"></swiper-slide>
-    <swiper-slide><img src="products/05.jpeg"></swiper-slide>
-  </swiper-container>
-  
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-  <script href="swiper.js"></script>
-
-  
+    <div class="overlay">
+        <section>
+          <!-- 검색어 입력창   -->
+          <input
+            type="text"
+            id="search"
+            placeholder="무엇이든 검색하세요!"
+            autocomplete="off"
+          />
+          <!-- 자동완성 단어 리스트 -->
+          <div class="autocomplete"></div>
+        </section>
+          <script  src="./search.js"></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+          <script  src="./animation.js"></script>
+          <div class="background"></div>	
       
-  <div id="footer">
+    </div>
+ 
+    <!-- Swiper -->
+    <div class="main">
+        <swiper-container class="mySwiper" navigation="true">
+            <swiper-slide><a href="download.html"><img src="contents/main1.jpg"></a></swiper-slide>
+            <swiper-slide><a href=".html"><img src="contents/main2.jpg"></a></swiper-slide>
+            <swiper-slide><a href="support.html"><img src="contents/main3.jpg"></a></swiper-slide>
+          </swiper-container>
+    </div>
 
-   <div> Works with compatible Beats headphones. Find My Beats requires an iPhone or iPod touch with iOS 14.5 or later, iPad with iPadOS 14.5 or later, or Mac with macOS Big Sur 11.3 or later. Customers must have an Apple ID and be signed into their iCloud account with Find My enabled.</div>
+    <div class="content-text">
+        지금 Bugs!에서 화제가 되고 있어요.
+    </div>
 
-   <div>Copyright © 2023 Apple Inc. - All rights reserved.</div>
-  </div>
+    <div class="content-text2">
+        Bugs!에서 일어나는 최신 소식들을 모아봤어요.
+    </div>
 
-</body>
+    <div class="container">
+        <div class="item1">
+            <div class="title-white">오늘의 아티스트</div>
+            <img class="item1-image" src="contents/item1.jpeg">
+            <div class="item1-text1">뉴진스<br>(NewJeans)</div>
+            <div class="item1-text2">NewJeans(뉴진스)는 2022년 7월 22일에 데뷔한 대한민국의 5인조 걸 그룹으로, 소속사는 하이브 산하의 레이블인 어도어이다. SM 엔터테인먼트 디렉터 출신으로 하이브에 영입된 민희진이 프로듀서로 나서서 발굴한 걸그룹이다. 2022년 8월 18일 《엠카운트다운》에서 데뷔 3주만에 첫 1위를 차지했다.</div>
+            <a class="learnmore" href="https://newjeans.kr/">아티스트 보러가기</a>
+
+        </div>
+
+        <div class="item2">
+            <div class="title">오늘의 곡</div>
+            <div class="music-container">
+                <div class="music-item">
+                    <span class="number">1</span><a class="music-link" href="https://www.youtube.com/watch?v=7HDeem-JaSY"><img src="contents/1.jpeg"></a><span class="music-title">퀸카 (Queencard)</span><br><span class="music-subtitle">(여자) 아이들 - i feel</span>
+                </div>
+                <div class="music-item">
+                    <span class="number">2</span><a class="music-link" href="https://www.youtube.com/watch?v=11cta61wi0g"><img src="contents/3.jpeg"></a><span class="music-title">Hype Boy</span><br><span class="music-subtitle">NewJeans - NewJeans 1st EP ‘New Jeans’</span>
+                </div>
+                <div class="music-item">
+                    <span class="number">3</span><a class="music-link" href="https://www.youtube.com/watch?v=UBURTj20HXI"><img src="contents/2.jpeg"></a><span class="music-title">UNFORGIVEN</span><br><span class="music-subtitle">LE SSERAFIM - UNFORGIVEN</span>
+                </div>
+                <div class="music-item">
+                    <span class="number">4</span><a class="music-link" href="https://www.youtube.com/watch?v=eN5mG_yMDiM"><img src="contents/6.jpeg"></a><span class="music-title">봄여름가을겨울</span><br><span class="music-subtitle">BIGBANG - Still life (Single)</span>
+                </div>
+                <div class="music-item">
+                    <span class="number">5</span><a class="music-link" href="https://www.youtube.com/watch?v=Os_heh8vPfs"><img src="contents/4.jpeg"></a><span class="music-title">Spicy</span><br><span class="music-subtitle">aespa - MY WORLD The 3rd Mini Album</span>
+                </div>
+            </div>
+            <a class="learnmore" href="bugscharts.html">더 보기</a>
+        </div>
+
+        <div class="item3">
+            <div class="title">공연 소식</div>
+            <div class="concert-container">
+                <div class="concert-item">
+                    <div class="item3text01">30 Jun 2023 (Fri.) <br>the star performing arts centre</div>
+                    <div class="item3text02">IVE THE FIRST<br>FAN CONCERT<br>'The Prom Queens'<br>IN SINGAPORE</div>
+                    <div class="item3text03">별도표기가 없는 경우, <br>IVE 멤버 전원이 참여합니다. <br> 방송 스케줄의 날짜 및 시간은<br> 편성표 기준으로 작성됩니다.</div>
+                </div>
+
+                <div class="concert-item">
+                    <img src="contents/item3.jpeg">
+                </div>
+            </div>
+        <a class="learnmore" href="concerts.html">예매하기</a>
+        </div>
+
+        <div class="item4">
+            <div class="title">고음질 Flac을 위한<br> Bugs!의 노력</div>
+            <div class="item4text01">지금까지</div>
+            <div class="item4text02">19,880,281곡</div>
+            <div class="item4text03">이나 보유하고 있어요!</div>
+            <div class="item4text04">실제 벅스가 보유하고 있는 고음질 음원수가 업데이트 됩니다.</div>
+            <a class="learnmore" href="about.html">더 보기</a>
+        </div>
+    </div>
+
+    <div class="content-text3" id="movepodcast">
+        새로운 팟케스트
+    </div>
+
+    <div class="content-text4">
+        모든 팟케스트는 이용권 없이 청취할 수 있어요.
+    </div>
 
 
+
+    <div class="container-podcast">
+        <a href='https://music.bugs.co.kr/radio/musiccast/channel/14550' class="item-podcast"><img src="contents/radio_1.jpeg"></a>
+        <a href="https://music.bugs.co.kr/radio/musiccast/channel/12842" class="item-podcast"><img src="contents/radio_2.jpeg"></a>
+        <a href="https://music.bugs.co.kr/radio/musiccast/channel/9807" class="item-podcast"><img src="contents/radio_3.jpeg"></a>
+    </div>
+
+    <div class="content-text2">
+        팟케스트는 정기적으로 업데이트 됩니다.
+    </div>
+
+
+    <div class="content-text5">Bugs!를 왜 이용해야할까요?</div>
+
+    <div class="container-icons">
+        <div class="item-icons">
+            <div><img src="contents/icon1.svg"></div><div class="title-icons">언제 어디서든 들어요.</div><div class="subtitle-icons">어디에 있던지, 인터넷이 없어도 오프라인에서 감상 할 수 있어요.</div>
+        </div>
+        <div class="item-icons">
+            <div><img src="contents/icon2.svg"></div><div class="title-icons">귀가 즐거워요.</div><div class="subtitle-icons">무손실 음원 (FlAC)을 지원해요. 원한다면 가볍고 빠른 ACC도 가능해요.</div>
+        </div>
+        <div class="item-icons">
+            <div><img src="contents/icon3.svg"></div><div class="title-icons">노래를 추천해줘요.</div><div class="subtitle-icons">AI가 사용자의 듣는 취향을 분석해 비슷한 노래들을 추천해줘요.</div>
+        </div>
+        <div class="item-icons">
+            <div><img src="contents/icon4.svg"></div><div class="title-icons">합리적인 비용이에요.</div><div class="subtitle-icons">최저 6,900원부터 시작해서 통신사와 카드사 제휴에 따라 각종 혜택을 드려요.</div>
+        </div>
+    </div>
+
+    <div class="container-support" id="movesupport">
+        <div class="item-support">
+            <div class="title-support">문제가 있다면<br> 저희에게 알려주세요.</div>
+            <div class="subtitle-support">실시간 상담을 통해 여러분의 문제를 해결해드릴께요.</div>
+            <div class="button" id="link"><a href="learnmore.html" >문의하기</a></div>
+        </div>
+        <img src="image/Bubble_Speech.png">
+    </div>
+
+
+    <div class="container-footer">
+            <div class="item-footer">
+                <div class="footer-logo"><img src="image/logo.svg"></div>
+            </div>
+            <div class="item-footer">
+                <div class="title-footer">회사</div>
+                <a class="subtitle-footer" href="about.html">회사소개</a>
+                <a class="subtitle-footer" href="about.html">이용약관</a>
+                <a class="subtitle-footer" href="about.html">정보처리방침</a>
+            </div>
+
+            <div class="item-footer">
+                <div class="title-footer">음악</div>
+                <a class="subtitle-footer" href="bugschart.html">벅스차트</a>
+                <a class="subtitle-footer" href="newmusic.html">최신음악</a>
+                <a class="subtitle-footer" href="podcast.html">팟케스트</a>
+            </div>
+
+            <div class="item-footer">
+                <div class="title-footer">공연</div>
+                <a class="subtitle-footer" href="concert.html">공연일정</a>
+                <a class="subtitle-footer" href="about.html">티켓구매</a>
+            </div>
+
+            <div class="item-footer">
+                <div class="title-footer">지원</div>
+                <a class="subtitle-footer" href="download.html">다운로드</a>
+                <a class="subtitle-footer" href="support.html">고객센터</a>
+            </div>
+
+            <div class="item-footer2">
+                <a class="footer-link" href="https://www.facebook.com/bugsplay/?locale=ko_KR"><img src="image/facebook_b.svg"></a>
+                <a class="footer-link" href="https://twitter.com/bugs_official_"><img src="image/twiiter_b.svg"></a>
+                <a class="footer-link" href="https://www.youtube.com/@Bugscorporation"><img src="image/youtube_b.svg"></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-text">
+        (주)엔에이치엔벅스 13487 경기도 성남시 분당구 대왕판교로 645번길 16  플레이뮤지엄 대표이사 : 왕문주 <br>고객센터 : help@help.bugs.co.kr / 1566-4882 (유료)
+        사업자등록번호 : 211-87-15555 통신판매업 신고번호 : 제 2013-경기성남-0532호 호스팅 제공자 : (주)엔에이치엔벅스<br>
+        사업자 정보 확인 © NHN Bugs Corp. All rights reserved.
+    </div>
     
+</body>
